@@ -7,11 +7,19 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 
+/**
+ * the main panle of the program which will be placed inside the main window
+ * @author alireza
+ *
+ */
 public class CMainPanel extends JPanel {
 	
     private JTabbedPane tabbedPane;
     private JList<File> directoryList;
 
+    /**
+     * creating a brand new main panel
+     */
     public CMainPanel() {
 
         setLayout(new BorderLayout());
@@ -23,11 +31,17 @@ public class CMainPanel extends JPanel {
         addNewTab(); // open new empty tab when user open the application
     }
 
+    /**
+     * adding tabbedpane to panel
+     */
     private void initTabbedPane() {
         tabbedPane = new JTabbedPane();
         add(tabbedPane, BorderLayout.CENTER);
     }
-
+    
+    /**
+     * adding directory list to panel
+     */
     private void initDirectoryList() {
         File[] files = FileUtils.getFilesInDirectory();
         directoryList = new JList<>(files);
@@ -45,7 +59,9 @@ public class CMainPanel extends JPanel {
         add(new JScrollPane(directoryList), BorderLayout.WEST);
     }
 
-
+    /**
+     * open new empty tab when user open the application
+     */
     public void addNewTab() {
         JTextArea textPanel = createTextPanel();
         textPanel.setText("Write Something here...");
