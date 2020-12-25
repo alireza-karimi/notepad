@@ -26,13 +26,20 @@ public class Note implements Serializable {
   }
 
   /**
+   * getting content of note
+   * @return content of note
+   */
+  public String getContent(){
+	  return content;
+  }
+  
+  /**
    * note to string
    */
   @Override
   public String toString() {
       return "Note{" +
               "title='" + title + '\'' +
-              ", content='" + content + '\'' +
               ", date='" + date + '\'' +
               '}';
   }

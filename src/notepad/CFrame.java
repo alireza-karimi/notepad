@@ -70,7 +70,9 @@ public class CFrame extends JFrame implements ActionListener {
         } else if (e.getSource() == saveItem) {
             mainPanel.saveNote();
         } else if (e.getSource() == exitItem) {
-            //TODO: Phase1: check all tabs saved ...
+        	for(int i = 0; i < mainPanel.getTabbedPane().getTabCount(); i++){
+        		mainPanel.saveNote(i);
+        	}
             System.exit(0);
         } else {
             System.out.println("Nothing detected...");
